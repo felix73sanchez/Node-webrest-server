@@ -68,7 +68,7 @@ export class TodosController {
         if (isNaN(id)) return res.status(400).json({ error: 'ID argument is not a number' });
 
         const index = todos.findIndex(todo => todo.id === id);
-        //if (!index) return res.status(404).json({ error: `Todo with id ${id} not found` });
+        //if (!index) return res.status(404).json({ error: `Todo with id ${id} not found` }); // no entra el if.
         if (index === -1) return res.status(404).json({ error: `Todo with id ${id} not found` });
 
         todos.splice(index, 1);
